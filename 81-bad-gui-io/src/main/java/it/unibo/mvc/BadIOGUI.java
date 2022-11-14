@@ -47,6 +47,7 @@ public class BadIOGUI {
         /*
          * Handlers
          */
+        
         final JPanel panel = new JPanel();
         final JButton read = new JButton("Read");
         panel.setLayout(new BoxLayout(panel, BoxLayout.LINE_AXIS));
@@ -55,10 +56,12 @@ public class BadIOGUI {
         panel.add(read);
         read.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                System.out.println("read");
+                List <String> list = Files.readAllLines(PATH ,StandardCharsets.UTF_8);
                 //System.exit(0);  /*Questo serve per chiudere la finestra dopo aver premuto il pulsante*/
+                
             }
         });
+        
         
         
 
