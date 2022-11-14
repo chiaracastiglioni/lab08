@@ -47,6 +47,24 @@ public class BadIOGUI {
         /*
          * Handlers
          */
+        final JPanel panel = new JPanel();
+        final JButton read = new JButton("Read");
+        panel.setLayout(new BoxLayout(panel, BoxLayout.LINE_AXIS));
+        canvas.add(panel, BorderLayout.CENTER);
+        panel.add(write);
+        panel.add(read);
+        read.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                System.out.println("read");
+                //System.exit(0);  /*Questo serve per chiudere la finestra dopo aver premuto il pulsante*/
+            }
+        });
+        
+        
+
+
+
+
         write.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(final ActionEvent e) {
@@ -80,6 +98,7 @@ public class BadIOGUI {
         final int sw = (int) screen.getWidth();
         final int sh = (int) screen.getHeight();
         frame.setSize(sw / PROPORTION, sh / PROPORTION);
+        frame.pack();
         /*
          * Instead of appearing at (0,0), upper left corner of the screen, this
          * flag makes the OS window manager take care of the default positioning
